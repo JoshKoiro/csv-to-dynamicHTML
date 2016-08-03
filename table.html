@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="controller as list">
+  <head>
+    <meta charset="utf-8">
+    <title>Drawing Log</title>
+        <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- Bootstrap Dependencies -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>82-37575</h1>
+          <h2>LSII PID drawings</h2>
+        </div>
+        <div class="col-xs-6">
+          <input id="searchbar" ng-model="search" style="margin:20px;" class="input-lg" type="text" name="name" value="" placeholder="Vacuum System"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <input id="searchbarTwo" ng-model="searchTwo" style="margin:20px;" class="input-lg" type="text" name="nameTwo" value="" placeholder="Valve Type"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <input id="searchbarThree" ng-model="searchThree" style="margin:20px;" class="input-lg" type="text" name="nameThree" value="" placeholder="Piping Material"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <!-- PUT A SECOND SEARCH FUNCTION HERE -->
+
+      <!-- <div class="row">
+        <div class="col-xs-4">
+            <input id="searchbar" ng-model="searchTwo" style="margin:20px;" class="input-lg" type="text" name="name" value=""><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+      </div> -->
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- TABLE -->
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th ng-repeat="headers in list.headTitle">{{headers}}</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tr>
+              <tr ng-repeat="drawing in list.drawings | filter:{VacuumSystem: search, ValveActuation: searchTwo, ChamberPipingMaterial: searchThree}">
+                <td style="min-width: 100px;">{{drawing.DrawingNo}}</td>
+                <td style="min-width: 75px;">{{drawing.FasciaGauge}}</td>
+                <td style="min-width: 200px;">{{drawing.VacuumSystem}}</td>
+                <td style="width:100px;">{{drawing.ShowsAuto_Door_Option}}</td>
+                <td>{{drawing.Door2Shown}}</td>
+                <td>{{drawing.SingleOrDual_Steam_Supply}}</td>
+                <td>{{drawing.ChamberPipingMaterial}}</td>
+                <td>{{drawing.JacketPipingMaterial}}</td>
+                <td>{{drawing.ValveActuation}}</td>
+                <td>{{drawing.ExtendedOptions}}</td>
+                <td style="width: 100px;">{{drawing.LatestDoorPN}}</td>
+                <td style="min-width: 250px;">{{drawing.Notes}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          </form>
+          <!-- TABLE -->
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="table.js"></script>
+</html>

@@ -1,0 +1,1 @@
+module.exports.data = function(){return [{"Age":"45","Name":"Joe"},{"Age":"19","Name":"Penny"},{"Age":"25","Name":"Billy"},{"Age":"65","Name":"Mike"},{"Age":"87","Name":"John"},{"Age":"15","Name":"Molly"}];};
