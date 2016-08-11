@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="controller as list">
+<html ng-app="App" ng-controller="controller">
   <head>
     <meta charset="utf-8">
     <title>Drawing Log</title>
@@ -15,6 +15,9 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- <script>document.write("<base href=\"" + document.location + "\" />");</script> -->
+
   </head>
   <body>
     <div class="container-fluid">
@@ -23,20 +26,8 @@
           <h1>82-37575</h1>
           <h2>LSII PID drawings</h2>
         </div>
-        <div class="col-xs-6">
-          <input id="searchbar" ng-model="search" style="margin:20px;" class="input-lg" type="text" name="name" value="" placeholder="Vacuum System"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <input id="searchbarTwo" ng-model="searchTwo" style="margin:20px;" class="input-lg" type="text" name="nameTwo" value="" placeholder="Valve Type"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <input id="searchbarThree" ng-model="searchThree" style="margin:20px;" class="input-lg" type="text" name="nameThree" value="" placeholder="Piping Material"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </div>
       </div>
 
-      <!-- PUT A SECOND SEARCH FUNCTION HERE -->
-
-      <!-- <div class="row">
-        <div class="col-xs-4">
-            <input id="searchbar" ng-model="searchTwo" style="margin:20px;" class="input-lg" type="text" name="name" value=""><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </div>
-      </div> -->
     </div>
     <div class="container-fluid">
       <div class="row">
@@ -46,24 +37,17 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th ng-repeat="headers in list.headTitle">{{headers}}</th>
+                <th ng-repeat="header in headers">{{header}}</th>
               </tr>
             </thead>
             <tbody>
-            </tr>
-              <tr ng-repeat="drawing in list.drawings | filter:{VacuumSystem: search, ValveActuation: searchTwo, ChamberPipingMaterial: searchThree}">
-                <td style="min-width: 100px;">{{drawing.DrawingNo}}</td>
-                <td style="min-width: 75px;">{{drawing.FasciaGauge}}</td>
-                <td style="min-width: 200px;">{{drawing.VacuumSystem}}</td>
-                <td style="width:100px;">{{drawing.ShowsAuto_Door_Option}}</td>
-                <td>{{drawing.Door2Shown}}</td>
-                <td>{{drawing.SingleOrDual_Steam_Supply}}</td>
-                <td>{{drawing.ChamberPipingMaterial}}</td>
-                <td>{{drawing.JacketPipingMaterial}}</td>
-                <td>{{drawing.ValveActuation}}</td>
-                <td>{{drawing.ExtendedOptions}}</td>
-                <td style="width: 100px;">{{drawing.LatestDoorPN}}</td>
-                <td style="min-width: 250px;">{{drawing.Notes}}</td>
+              <tr ng-repeat="data in data">
+                <td>{{data.First_Name}}</td>
+                <td>{{data.Last_Name}}</td>
+                <td>{{data.Age}}</td>
+                <td>{{data.Sex}}</td>
+
+
               </tr>
             </tbody>
           </table>
@@ -76,5 +60,4 @@
     </div>
   </body>
   <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="table.js"></script>
 </html>

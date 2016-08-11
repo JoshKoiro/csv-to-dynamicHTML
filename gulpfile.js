@@ -9,8 +9,8 @@ gulp.task('default',function(){
   gulp.src('source-csv/*.csv')
   .pipe(csv2json(csvParse))
   .pipe(rename('data.js'))
-  .pipe(insert.prepend('module.exports.data = function(){return '))
-  .pipe(insert.append(';};'))
+  .pipe(insert.prepend('{"data":'))
+  .pipe(insert.append('}'))
   .pipe(gulp.dest('source-js'));
 
 });
