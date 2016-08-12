@@ -31,6 +31,7 @@ Make sure you have gulp.js CLI installed globally as well as the local version i
 
 
 
+
 Once you have Gulp installed, open a terminal in the project's root directory and run `gulp`.
 
 - - -
