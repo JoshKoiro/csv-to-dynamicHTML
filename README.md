@@ -26,11 +26,7 @@ Once you have the repo initialized, you next need to bring your .csv file and pl
 
 Make sure you have gulp.js CLI installed globally as well as the local version installed for your repository. You can check this by using the `gulp --version` command.
 
-![gulpVersion.png](csv-to-dynamicHTML/Readme images/gulpVersion.png)
-
-
-
-
+- - -
 
 Once you have Gulp installed, open a terminal in the project's root directory and run `gulp`.
 
