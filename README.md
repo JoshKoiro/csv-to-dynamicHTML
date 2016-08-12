@@ -32,7 +32,7 @@ Once you have Gulp installed, open a terminal in the project's root directory an
 
 - - -
 
-Once that process is complete run `simplehttpserver` Again, like Gulp, make sure you have this installed globally by using `npm install simplehttpserver -g`
+Once that process is complete run `npm start`. This command will run the simplehttpserver that will host the webpage. Again, like Gulp, make sure you have this installed globally by using `npm install simplehttpserver -g` before you run `npm start`.
 
 - - -
 
