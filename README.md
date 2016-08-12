@@ -28,16 +28,11 @@ Make sure you have gulp.js CLI installed globally as well as the local version i
 
 - - -
 
-Once you have Gulp installed, open a terminal in the project's root directory and run `gulp`.
+Once you have Gulp installed, open a terminal in the project's root directory and run `gulp`. the default gulp process takes the .csv file and runs it through a parser to convert it to a json object.
 
 - - -
 
-
-The `gulp` command takes the .csv file and runs it through a parser to convert it to a json object.
-
-- - -
-
-Once that process is complete `simplehttpserver`
+Once that process is complete run `simplehttpserver` Again, like Gulp, make sure you have this installed globally by using `npm install simplehttpserver -g`
 
 - - -
 
